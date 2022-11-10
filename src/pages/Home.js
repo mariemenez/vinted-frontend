@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Feed from "../components/Feed";
+import Article from "../components/Article";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -26,15 +26,26 @@ const Home = () => {
     <p>is Loading....</p>
   ) : (
     <div>
-      <Link to="/offer/:id">Aller vers la page Offer</Link>
       <div className="hero">
         <img
           src="https://static.vinted.com/assets/seller-promotion/gender_test/c/banner-wide-96cebf41372b8de2d64b7e609f0fb2d3c3084f8df0f861fa8b3782231e5c31f8.jpg"
-          alt="image-hero"
+          alt="hero"
         />
       </div>
       <div className="container">
-        <Feed />
+        <section>
+          {data.offers.map((offer, index) => {
+            return (
+              <div key={index} className="article-container">
+                {offer.product_pictures.length > 0 ? (
+                  <Link to={`/offer/${offer._id}`}>
+                    <Article offer={offer} />
+                  </Link>
+                ) : null}
+              </div>
+            );
+          })}
+        </section>
       </div>
     </div>
   );

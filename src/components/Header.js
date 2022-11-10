@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header container">
       <div className="top">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png"
-          alt="logo"
-        />
+        <Link to="/">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png"
+            alt="logo"
+          />
+        </Link>
         <input type="text" placeholder="Rechercher des articles" />
+
         <div>
           <button>S'inscrire</button>
           <button>Se connecter</button>

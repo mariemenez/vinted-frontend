@@ -1,9 +1,12 @@
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .container {
   max-width: 1240px;
   margin: 0 auto;
+  /* display: flex; */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* HEADER */
@@ -20,13 +23,18 @@
   align-items: center;
 }
 
-.header img {
-  height: 80%;
+.top img {
+  height: 40px;
+}
+
+.top input {
+  width: 500px;
+  padding: 10px;
 }
 
 .header nav ul {
   display: flex;
-  justify-content: start;
+  /* justify-content: start; */
   gap: 30px;
 }
 
@@ -40,4 +48,107 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/* HOME */
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: aqua; */
+  justify-content: flex-start;
+}
+
+.article-container {
+  margin: 7px;
+  border: 2px solid blue;
+  display: flex;
+}
+
+.article {
+  border: solid red 1px;
+  width: 230px;
+  height: 450px;
+}
+
+.article img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* OFFER */
+
+.offer {
+  display: flex;
+  /* background-color: aquamarine; */
+  background-color: #eaedee;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.left {
+  /* background-color: lightgreen; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offer img {
+  width: 500px;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+  padding: 20px;
+}
+.right {
+  /* background-color: gray; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.informations {
+  width: 500px;
+  height: 600px;
+  padding: 20px;
+  font-size: 15px;
+  line-height: 30px;
+  /* background-color: white; */
+}
+
+.haut {
+  padding: 30px;
+  background-color: white;
+  padding-bottom: 40px;
+  border-bottom: solid black 1px;
+}
+
+.haut span {
+  font-weight: bold;
+}
+.price {
+  font-size: 30px;
+}
+
+.bas {
+  padding: 30px;
+  background-color: white;
+  padding-top: 40px;
+}
+.bas span {
+  font-weight: bold;
+}
+.informations button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #09b0ba;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border-width: 0px;
 }
