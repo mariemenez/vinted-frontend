@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-const Header = () => {
+
+const Header = ({ token, handleToken }) => {
   return (
     <div className="header container">
       <div className="top">
@@ -12,8 +13,26 @@ const Header = () => {
         <input type="text" placeholder="Rechercher des articles" />
 
         <div className="login-out">
-          <button>S'inscrire</button>
-          <button>Se connecter</button>
+          {token ? (
+            <button
+              style={{ backgroundColor: "red" }}
+              onClick={() => {
+                handleToken(null);
+              }}
+            >
+              Se deconnecter
+            </button>
+          ) : (
+            <>
+              <Link to="/signup">
+                <button>S'inscrire</button>
+              </Link>
+              <Link to="/login">
+                <button>Se connecter</button>
+              </Link>
+            </>
+          )}
+
           <button>Vends tes articles</button>
         </div>
       </div>

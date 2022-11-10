@@ -30,6 +30,8 @@
 .top input {
   width: 600px;
   padding: 10px;
+  border-radius: 5px;
+  border: solid 1px grey;
 }
 
 .login-out {
@@ -72,12 +74,13 @@ section {
 }
 
 .article-container {
-  margin: 7px;
+  margin: 9px;
   /* border: 2px solid blue; */
   display: flex;
 }
 
 .article {
+  margin-top: 10px;
   border: solid red 1px;
   width: 230px;
   height: 500px;
@@ -87,12 +90,18 @@ section {
   font-size: 15px;
 }
 
+.lien {
+  text-decoration: none;
+  color: black;
+}
+
 .article .owner-infos {
   display: flex;
   align-items: center;
   gap: 10px;
   padding-left: 10px;
   margin-bottom: 5px;
+  height: 40px;
 }
 
 .owner-infos img {
