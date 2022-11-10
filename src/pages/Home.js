@@ -37,11 +37,9 @@ const Home = () => {
           {data.offers.map((offer, index) => {
             return (
               <div key={index} className="article-container">
-                {offer.product_pictures.length > 0 ? (
-                  <Link to={`/offer/${offer._id}`}>
-                    <Article offer={offer} />
-                  </Link>
-                ) : null}
+                <Link to={`/offer/${offer._id}`}>
+                  <Article offer={offer} />
+                </Link>
               </div>
             );
           })}

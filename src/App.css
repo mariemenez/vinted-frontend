@@ -5,18 +5,18 @@
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  /* display: flex; */
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* HEADER */
 
-.header {
+/* .header {
   border: solid blue 2px;
-}
+} */
+
 .top {
   /* background-color: aqua; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -28,14 +28,27 @@
 }
 
 .top input {
-  width: 500px;
+  width: 600px;
   padding: 10px;
+}
+
+.login-out {
+  display: flex;
+  gap: 10px;
+}
+.login-out button {
+  padding: 10px;
+  background-color: #09b0ba;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  border-width: 0px;
 }
 
 .header nav ul {
   display: flex;
-  /* justify-content: start; */
   gap: 30px;
+  padding: 10px;
 }
 
 /* hero */
@@ -56,22 +69,39 @@ section {
   display: flex;
   flex-wrap: wrap;
   /* background-color: aqua; */
-  justify-content: flex-start;
 }
 
 .article-container {
   margin: 7px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   display: flex;
 }
 
 .article {
   border: solid red 1px;
   width: 230px;
-  height: 450px;
+  height: 500px;
+}
+.article p {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 15px;
 }
 
-.article img {
+.article .owner-infos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.owner-infos img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.article .clothes {
   width: 100%;
   height: 80%;
   object-fit: cover;
@@ -100,7 +130,6 @@ section {
   height: 600px;
   object-fit: cover;
   object-position: center;
-  padding: 20px;
 }
 .right {
   /* background-color: gray; */
@@ -117,17 +146,21 @@ section {
   padding: 20px;
   font-size: 15px;
   line-height: 30px;
-  /* background-color: white; */
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .haut {
   padding: 30px;
-  background-color: white;
-  padding-bottom: 40px;
+  /* background-color: blue; */
   border-bottom: solid black 1px;
+  flex: 3;
 }
 
-.haut span {
+.informations span {
   font-weight: bold;
 }
 .price {
@@ -137,18 +170,50 @@ section {
 .bas {
   padding: 30px;
   background-color: white;
-  padding-top: 40px;
+  /* background-color: blueviolet; */
+  flex: 3;
 }
-.bas span {
-  font-weight: bold;
+
+.acheter {
+  /* background-color: pink; */
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .informations button {
-  width: 100%;
+  width: 90%;
   padding: 15px;
-  margin-top: 20px;
   background-color: #09b0ba;
   color: white;
   font-size: 20px;
   border-radius: 5px;
   border-width: 0px;
+}
+
+/* SIGN-UP */
+
+.signup {
+  margin-top: 30px;
+  background-color: #09b0ba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup h1 {
+  padding: 30px;
+  font-size: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signup form input {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 300px;
 }

@@ -7,7 +7,6 @@ const Offer = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-  // console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -81,6 +80,8 @@ const Offer = () => {
               ) : (
                 <p>vendeur anonyme</p>
               )}
+            </div>
+            <div className="acheter">
               <button>Acheter</button>
             </div>
           </div>

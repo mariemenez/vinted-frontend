@@ -11,7 +11,7 @@ const Header = () => {
         </Link>
         <input type="text" placeholder="Rechercher des articles" />
 
-        <div>
+        <div className="login-out">
           <button>S'inscrire</button>
           <button>Se connecter</button>
           <button>Vends tes articles</button>
