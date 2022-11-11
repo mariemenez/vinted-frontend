@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = ({ handleToken }) => {
   const navigate = useNavigate();
@@ -45,8 +46,13 @@ const Login = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" value="Se connecter" />
+        <div className="inscription">
+          <input type="submit" value="Se connecter" />
+        </div>
       </form>
+      <Link className="switch-connexion" to="/signup">
+        Pas encore de compte ? Inscris toi !
+      </Link>
     </div>
   );
 };

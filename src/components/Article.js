@@ -5,7 +5,7 @@ const Article = ({ offer }) => {
         {offer.owner !== undefined &&
         offer.owner.account !== undefined &&
         offer.owner.account.avatar !== undefined ? (
-          <img src={offer.owner.account.avatar.secure_url} />
+          <img src={offer.owner.account.avatar.secure_url} alt="avatar" />
         ) : null}
         {offer.owner ? (
           <p>{offer.owner.account.username}</p>
@@ -18,12 +18,12 @@ const Article = ({ offer }) => {
         src={offer.product_image.secure_url}
         alt="clothes"
       />
-      <p>{offer.product_price} €</p>
+      <p style={{ fontSize: 16 }}>{offer.product_price} €</p>
       {offer.product_details.map((item, index) => {
         return (
           <div key={index}>
-            <p>{item.TAILLE}</p>
-            <p>{item.MARQUE}</p>
+            <p style={{ color: "grey" }}>{item.TAILLE}</p>
+            <p style={{ color: "grey" }}>{item.MARQUE}</p>
           </div>
         );
       })}

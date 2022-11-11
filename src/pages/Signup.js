@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = ({ handleToken }) => {
   const navigate = useNavigate();
@@ -63,10 +63,22 @@ const Signup = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <input type="checkbox" checked={newsletter} onChange={handleCheck} />
-        <p>S'incrire a la newsletter</p>
-        <input type="submit" value="S'inscrire" />
+        <div className="newsletter">
+          <input type="checkbox" checked={newsletter} onChange={handleCheck} />
+          <p>S'inscrire à notre newsletter</p>
+        </div>
+        <p className="confidentialité">
+          En m'inscrivant je confirme avoir lu et accepté les Termes &
+          Conditions et Politique de Confidentialité de Vinted. Je confirme
+          avoir plus de 18 ans.
+        </p>
+        <div className="inscription">
+          <input type="submit" value="S'inscrire" />
+        </div>
       </form>
+      <Link className="switch-connexion" to="/login">
+        Tu a déjà un compte ? Connecte toi !
+      </Link>
     </div>
   );
 };

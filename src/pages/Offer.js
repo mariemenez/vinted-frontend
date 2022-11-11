@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 const Offer = () => {
   const [data, setData] = useState();
@@ -24,12 +24,14 @@ const Offer = () => {
   }, []);
 
   return isLoading ? (
-    <p>is Loading....</p>
+    <div>
+      <Loading />
+    </div>
   ) : (
     <div className>
       <div className="offer">
         <section className="left">
-          <img src={data.product_pictures[0].secure_url} alt="clothes" />
+          <img src={data.product_image.secure_url} alt="clothes" />
         </section>
 
         <section className="right">
@@ -75,12 +77,23 @@ const Offer = () => {
                 <span>{data.product_name}</span>
               </p>
               <p>{data.product_description}</p>
-              {data.offer ? (
-                <p>{data.offer.owner.account.username}</p>
-              ) : (
-                <p>vendeur anonyme</p>
-              )}
+              <div className="owner">
+                {data.owner !== undefined &&
+                data.owner.account !== undefined &&
+                data.owner.account.avatar !== undefined ? (
+                  <img
+                    src={data.owner.account.avatar.secure_url}
+                    alt="avatar"
+                  />
+                ) : null}
+                {data.owner ? (
+                  <p>{data.owner.account.username}</p>
+                ) : (
+                  <p>vendeur anonyme</p>
+                )}
+              </div>
             </div>
+
             <div className="acheter">
               <button>Acheter</button>
             </div>
