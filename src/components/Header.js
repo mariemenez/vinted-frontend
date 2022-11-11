@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Header = ({ token, handleToken }) => {
+const Header = ({ token, handleToken, filters, setFilters }) => {
   return (
     <div className="header">
       <div className="container">
@@ -11,7 +11,14 @@ const Header = ({ token, handleToken }) => {
               alt="logo"
             />
           </Link>
-          <input type="text" placeholder="Rechercher des articles" />
+          <input
+            type="text"
+            placeholder="Rechercher des articles"
+            value={filters}
+            onChange={(event) => {
+              setFilters(event.target.value);
+            }}
+          />
 
           <div className="nav-top">
             {token ? (

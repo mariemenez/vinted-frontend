@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
+  const [filters, setFilters] = useState("");
 
   const handleToken = (token) => {
     if (token) {
@@ -22,9 +23,19 @@ function App() {
   };
   return (
     <Router>
-      <Header token={token} handleToken={handleToken} />
+      <Header
+        token={token}
+        handleToken={handleToken}
+        filters={filters}
+        setFilters={setFilters}
+      />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home />}
+          filters={filters}
+          setFilters={setFilters}
+        />
         <Route path="offer/:id" element={<Offer />} />
         <Route path="signup" element={<Signup handleToken={handleToken} />} />
         <Route path="login" element={<Login handleToken={handleToken} />} />

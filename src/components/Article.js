@@ -15,15 +15,15 @@ const Article = ({ offer }) => {
       </div>
       <img
         className="clothes"
-        src={offer.product_image.secure_url}
+        src={offer.product_image.picture}
         alt="clothes"
       />
       <p style={{ fontSize: 16 }}>{offer.product_price} €</p>
       {offer.product_details.map((item, index) => {
         return (
           <div key={index}>
-            <p style={{ color: "grey" }}>{item.TAILLE}</p>
-            <p style={{ color: "grey" }}>{item.MARQUE}</p>
+            <p style={{ color: "grey" }}>{item.size}</p>
+            <p style={{ color: "grey" }}>{item.brand}</p>
           </div>
         );
       })}

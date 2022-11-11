@@ -7,21 +7,24 @@ const Offer = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  console.log({ id });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+          `https://site--backend-vinted--6gc2xpkgkrgz.code.run/offer/${id}`
         );
+
         setData(response.data);
+        // console.log(data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <div>
@@ -31,9 +34,9 @@ const Offer = () => {
     <div className>
       <div className="offer">
         <section className="left">
-          <img src={data.product_image.secure_url} alt="clothes" />
+          <img src={data.product_image.picture} alt="clothes" />
+          {console.log(data)}
         </section>
-
         <section className="right">
           <div className="informations">
             <div className="haut">
@@ -41,31 +44,31 @@ const Offer = () => {
               {data.product_details.map((elem) => {
                 return (
                   <div className="haut-details">
-                    {elem.MARQUE ? (
+                    {elem.brand ? (
                       <p>
                         {" "}
-                        MARQUE : <span>{elem.MARQUE}</span>
+                        MARQUE : <span>{elem.brand}</span>
                       </p>
                     ) : null}
-                    {elem.TAILLE ? (
+                    {elem.size ? (
                       <p>
                         {" "}
-                        TAILLE : <span>{elem.TAILLE}</span>{" "}
+                        TAILLE : <span>{elem.size}</span>{" "}
                       </p>
                     ) : null}
-                    {elem.ÉTAT ? (
+                    {elem.condition ? (
                       <p>
-                        ETAT : <span>{elem.ÉTAT}</span>
+                        ETAT : <span>{elem.condition}</span>
                       </p>
                     ) : null}
-                    {elem.COULEUR ? (
+                    {elem.color ? (
                       <p>
-                        COULEUR : <span>{elem.COULEUR}</span>
+                        COULEUR : <span>{elem.color}</span>
                       </p>
                     ) : null}
-                    {elem.EMPLACEMENT ? (
+                    {elem.city ? (
                       <p>
-                        EMPLACEMENT : <span>{elem.EMPLACEMENT}</span>{" "}
+                        EMPLACEMENT : <span>{elem.city}</span>{" "}
                       </p>
                     ) : null}
                   </div>

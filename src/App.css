@@ -112,6 +112,9 @@
   flex: 1;
 }
 
+.dechire {
+  position: absolute;
+}
 /* HOME */
 
 section {
