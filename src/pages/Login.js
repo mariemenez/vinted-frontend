@@ -12,7 +12,7 @@ const Login = ({ handleToken }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        "https://site--backend-vinted--6gc2xpkgkrgz.code.run/user/signup",
         {
           email: email,
           password: password,

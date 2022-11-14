@@ -7,10 +7,15 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import Publish from "./pages/Publish";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [filters, setFilters] = useState("");
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
+  const [sort, setSort] = useState("");
+  // console.log(filters);
 
   const handleToken = (token) => {
     if (token) {
@@ -28,17 +33,29 @@ function App() {
         handleToken={handleToken}
         filters={filters}
         setFilters={setFilters}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
+        sort={sort}
+        setSort={setSort}
       />
       <Routes>
         <Route
           path="/"
-          element={<Home />}
-          filters={filters}
-          setFilters={setFilters}
+          element={
+            <Home
+              filters={filters}
+              priceMin={priceMin}
+              priceMax={priceMax}
+              sort={sort}
+            />
+          }
         />
         <Route path="offer/:id" element={<Offer />} />
         <Route path="signup" element={<Signup handleToken={handleToken} />} />
         <Route path="login" element={<Login handleToken={handleToken} />} />
+        <Route path="publish" element={<Publish />} />
       </Routes>
     </Router>
   );

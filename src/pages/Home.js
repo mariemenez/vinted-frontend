@@ -4,18 +4,16 @@ import { Link } from "react-router-dom";
 import Article from "../components/Article";
 import Loading from "./Loading";
 
-const Home = ({ filters, setFilters }) => {
+const Home = ({ filters, priceMin, priceMax, sort }) => {
+  console.log(priceMin);
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // let filters = { filters };
         const response = await axios.get(
-          `https://site--backend-vinted--6gc2xpkgkrgz.code.run/offers/?`
+          `https://site--backend-vinted--6gc2xpkgkrgz.code.run/offers?name=${filters}&priceMin=${priceMin}&priceMax=${priceMax}&sort=${sort}`
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -23,7 +21,7 @@ const Home = ({ filters, setFilters }) => {
       }
     };
     fetchData();
-  }, [filters]); // ici je mettrai mon state
+  }, [filters, priceMin, priceMax, sort]); // ici je mettrai mon state
 
   return isLoading ? (
     <div>

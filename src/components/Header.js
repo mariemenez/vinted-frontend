@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 
-const Header = ({ token, handleToken, filters, setFilters }) => {
+const Header = ({
+  token,
+  handleToken,
+  filters,
+  setFilters,
+  priceMin,
+  setPriceMin,
+  priceMax,
+  setPriceMax,
+  sort,
+  setSort,
+}) => {
+  // console.log(filters);
   return (
     <div className="header">
       <div className="container">
@@ -45,7 +57,38 @@ const Header = ({ token, handleToken, filters, setFilters }) => {
           </div>
         </div>
         <div>
-          <nav className="nav">
+          <button
+            onClick={() => {
+              setSort("price-asc");
+            }}
+          >
+            prix +
+          </button>
+          <button
+            onClick={() => {
+              setSort("price-desc");
+            }}
+          >
+            prix -
+          </button>
+          <input
+            type="text"
+            placeholder="priceMin"
+            value={priceMin}
+            onChange={(event) => {
+              setPriceMin(event.target.value);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="priceMax"
+            value={priceMax}
+            onChange={(event) => {
+              setPriceMax(event.target.value);
+            }}
+          />
+
+          {/* <nav className="nav">
             <ul>
               <li>Femmes</li>
               <li>Hommes</li>
@@ -56,7 +99,7 @@ const Header = ({ token, handleToken, filters, setFilters }) => {
               <li>A propos</li>
               <li>Notre plateforme</li>
             </ul>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </div>
