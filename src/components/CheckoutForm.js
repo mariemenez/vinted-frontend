@@ -26,12 +26,15 @@ const CheckoutForm = ({ token }) => {
     const stripeToken = stripeResponse.token.id;
     const newPrice = price * 100;
 
-    const response = await axios.post("http://localhost:3001/payment", {
-      stripeToken,
-      description,
-      newPrice,
-      id,
-    });
+    const response = await axios.post(
+      "https://site--backend-vinted--6gc2xpkgkrgz.code.run/payment",
+      {
+        stripeToken,
+        description,
+        newPrice,
+        id,
+      }
+    );
     console.log(response.data);
 
     if (response.data.status === "succeeded") {
