@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 
 const Offer = () => {
   const [data, setData] = useState();
@@ -98,7 +99,16 @@ const Offer = () => {
             </div>
 
             <div className="acheter">
-              <button>Acheter</button>
+              <Link
+                to="/payment"
+                state={{
+                  title: data.product_name,
+                  price: data.product_price,
+                  description: data.product_description,
+                }}
+              >
+                <button>Acheter</button>
+              </Link>
             </div>
           </div>
         </section>

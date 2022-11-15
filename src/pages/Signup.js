@@ -14,7 +14,7 @@ const Signup = ({ handleToken }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://site--backend-vinted--6gc2xpkgkrgz.code.run/user/signup",
         {
           email: email,
           username: username,

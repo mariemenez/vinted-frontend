@@ -12,12 +12,13 @@ const Login = ({ handleToken }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://site--backend-vinted--6gc2xpkgkrgz.code.run/user/signup",
+        "https://site--backend-vinted--6gc2xpkgkrgz.code.run/user/login",
         {
           email: email,
           password: password,
         }
       );
+
       const token = response.data.token;
       handleToken(token);
       navigate("/");

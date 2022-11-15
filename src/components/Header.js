@@ -23,15 +23,16 @@ const Header = ({
               alt="logo"
             />
           </Link>
-          <input
-            type="text"
-            placeholder="Rechercher des articles"
-            value={filters}
-            onChange={(event) => {
-              setFilters(event.target.value);
-            }}
-          />
-
+          <div>
+            <input
+              type="text"
+              placeholder="Rechercher des articles"
+              value={filters}
+              onChange={(event) => {
+                setFilters(event.target.value);
+              }}
+            />
+          </div>
           <div className="nav-top">
             {token ? (
               <button
@@ -52,43 +53,13 @@ const Header = ({
                 </Link>
               </div>
             )}
-
-            <button>Vends tes articles</button>
+            <Link to="/publish">
+              <button>Vends tes articles</button>
+            </Link>
           </div>
         </div>
-        <div>
-          <button
-            onClick={() => {
-              setSort("price-asc");
-            }}
-          >
-            prix +
-          </button>
-          <button
-            onClick={() => {
-              setSort("price-desc");
-            }}
-          >
-            prix -
-          </button>
-          <input
-            type="text"
-            placeholder="priceMin"
-            value={priceMin}
-            onChange={(event) => {
-              setPriceMin(event.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="priceMax"
-            value={priceMax}
-            onChange={(event) => {
-              setPriceMax(event.target.value);
-            }}
-          />
-
-          {/* <nav className="nav">
+        {/* <div>
+          <nav className="nav">
             <ul>
               <li>Femmes</li>
               <li>Hommes</li>
@@ -99,8 +70,8 @@ const Header = ({
               <li>A propos</li>
               <li>Notre plateforme</li>
             </ul>
-          </nav> */}
-        </div>
+          </nav>
+        </div> */}
       </div>
     </div>
   );
