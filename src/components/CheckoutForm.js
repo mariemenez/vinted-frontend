@@ -8,7 +8,7 @@ const CheckoutForm = ({ token }) => {
   const stripe = useStripe();
   const elements = useElements();
   const location = useLocation();
-  const { price, description, id } = location.state;
+  const { price, description, id, title } = location.state;
   const [completed, setCompleted] = useState(false);
 
   console.log(id);
@@ -47,7 +47,7 @@ const CheckoutForm = ({ token }) => {
             <div className="resume">
               <h4>Resumé de la commande</h4>
               <div>
-                <p>commande</p>
+                <p>Commande</p>
                 <p>{price} €</p>
               </div>
               <div>
@@ -66,8 +66,9 @@ const CheckoutForm = ({ token }) => {
               </div>
               <div>
                 <p>
-                  Il ne vous reste plus qu'une étape pour vous offrir XXX. Vous
-                  allez payer XXX. Frais de protection et frais de port inclus.
+                  Il ne vous reste plus qu'une étape pour vous offrir {title}.
+                  <br /> Vous allez payer {priceTotal} €. Frais de protection et
+                  frais de port inclus.
                 </p>
               </div>
             </div>

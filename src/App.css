@@ -519,7 +519,7 @@ form {
 .resume {
   /* background-color: white; */
   flex: 2;
-  padding: 10px;
+  padding: 30px;
   border-bottom: solid black 1px;
 }
 
@@ -532,7 +532,7 @@ form {
 .conclusion {
   /* background-color: white; */
   flex: 2;
-  padding: 10px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -541,12 +541,13 @@ form {
 }
 
 .conclusion div {
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
 }
 .conclusion .total-price {
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .stripe {
@@ -557,7 +558,7 @@ form {
 .payment-form {
   /* background-color: white; */
   width: 100%;
-  padding: 10px;
+  padding: 30px;
 }
 
 .payment-form button {
@@ -566,7 +567,6 @@ form {
   border-radius: 5px;
   border: none;
   background-color: rgb(16, 168, 16);
-  margin-bottom: 10px;
   color: white;
   font-size: 15px;
 }
