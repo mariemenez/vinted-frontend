@@ -4,36 +4,34 @@ import { useLocation } from "react-router-dom";
 
 import axios from "axios";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ token }) => {
   const stripe = useStripe();
   const elements = useElements();
   const location = useLocation();
-  const { price, description } = location.state;
+  const { price, description, id } = location.state;
   const [completed, setCompleted] = useState(false);
 
-  const priceTotal = price + 0.4 + 0.8;
+  console.log(id);
 
+  const priceTotal = price + 0.4 + 0.8;
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const cardElement = elements.getElement(CardElement);
     const stripeResponse = await stripe.createToken(cardElement, {
-      name: "l'id de la personne connectée",
+      name: token,
     });
     // console.log(stripeResponse);
 
     const stripeToken = stripeResponse.token.id;
-    // console.log(stripeToken);
     const newPrice = price * 100;
 
-    const response = await axios.post(
-      "https://site--backend-vinted--6gc2xpkgkrgz.code.run/payment",
-      {
-        stripeToken,
-        description,
-        newPrice,
-      }
-    );
+    const response = await axios.post("http://localhost:3001/payment", {
+      stripeToken,
+      description,
+      newPrice,
+      id,
+    });
     console.log(response.data);
 
     if (response.data.status === "succeeded") {
@@ -83,7 +81,10 @@ const CheckoutForm = () => {
         </div>
       ) : (
         <div className="succeeded">
-          <span>paiement effectué</span>
+          <div className="succeeded-content">
+            <p>Paiement effectué.</p>
+            <p>Merci, à bientôt !</p>
+          </div>
         </div>
       )}
     </>

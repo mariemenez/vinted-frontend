@@ -16,7 +16,7 @@ const Payment = ({ token }) => {
       {token ? (
         <div>
           <Elements stripe={stripePromise}>
-            <CheckoutForm />
+            <CheckoutForm token={token} />
           </Elements>
         </div>
       ) : (
