@@ -2,7 +2,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/CheckoutForm";
-import { useLocation } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
 const stripePromise = loadStripe(
@@ -10,7 +9,6 @@ const stripePromise = loadStripe(
 );
 
 const Payment = ({ token }) => {
-  const location = useLocation();
   return (
     <>
       {token ? (
