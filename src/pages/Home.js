@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Article from "../components/Article";
 import Loading from "./Loading";
+import Menu from "../components/Menu";
 
 const Home = ({
   filters,
@@ -12,6 +13,10 @@ const Home = ({
   setPriceMax,
   sort,
   setSort,
+  menu,
+  setMenu,
+  token,
+  handleToken,
 }) => {
   console.log(priceMin);
   const [data, setData] = useState();
@@ -29,7 +34,7 @@ const Home = ({
       }
     };
     fetchData();
-  }, [filters, priceMin, priceMax, sort]); // ici je mettrai mon state
+  }, [filters, priceMin, priceMax, sort]);
 
   return isLoading ? (
     <div>
@@ -38,6 +43,12 @@ const Home = ({
   ) : (
     <div>
       <div className="hero">
+        <Menu
+          menu={menu}
+          setMenu={setMenu}
+          token={token}
+          handleToken={handleToken}
+        />
         <img
           src="https://static.vinted.com/assets/seller-promotion/gender_test/c/banner-wide-96cebf41372b8de2d64b7e609f0fb2d3c3084f8df0f861fa8b3782231e5c31f8.jpg"
           alt="hero"

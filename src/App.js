@@ -17,6 +17,8 @@ function App() {
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
   const [sort, setSort] = useState("");
+  const [menu, setMenu] = useState(false);
+
   // console.log(filters);
 
   const handleToken = (token) => {
@@ -41,6 +43,8 @@ function App() {
         setPriceMax={setPriceMax}
         sort={sort}
         setSort={setSort}
+        menu={menu}
+        setMenu={setMenu}
       />
       <Routes>
         <Route
@@ -54,13 +58,47 @@ function App() {
               setPriceMax={setPriceMax}
               sort={sort}
               setSort={setSort}
+              menu={menu}
+              setMenu={setMenu}
+              token={token}
+              handleToken={handleToken}
             />
           }
         />
         <Route path="offer/:id" element={<Offer />} />
-        <Route path="signup" element={<Signup handleToken={handleToken} />} />
-        <Route path="login" element={<Login handleToken={handleToken} />} />
-        <Route path="publish" element={<Publish token={token} />} />
+        <Route
+          path="signup"
+          element={
+            <Signup
+              handleToken={handleToken}
+              menu={menu}
+              setMenu={setMenu}
+              token={token}
+            />
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <Login
+              handleToken={handleToken}
+              menu={menu}
+              setMenu={setMenu}
+              token={token}
+            />
+          }
+        />
+        <Route
+          path="publish"
+          element={
+            <Publish
+              token={token}
+              handleToken={handleToken}
+              menu={menu}
+              setMenu={setMenu}
+            />
+          }
+        />
         <Route path="payment" element={<Payment token={token} />} />
       </Routes>
       <Footer />

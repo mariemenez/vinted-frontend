@@ -17,8 +17,7 @@
 
 .header {
   /* border: solid blue 2px; */
-  position: sticky;
-  top: 0px;
+
   background-color: white;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -487,6 +486,7 @@ form {
   border: 0px;
   border-radius: 5px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 /* PAIEMENT */
@@ -612,4 +612,99 @@ form {
 .footer :hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.hide-menu {
+  display: none;
+}
+.button-menu {
+  display: none;
+  width: 30px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1060px) {
+  .container {
+    /* background-color: pink; */
+    padding: 20px;
+  }
+  section {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    /* background-color: aqua; */
+  }
+  .nav-top {
+    display: none;
+  }
+  .top input {
+    width: 400px;
+  }
+  .button-menu {
+    display: block;
+    cursor: pointer;
+  }
+  .menu {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 100px;
+  }
+
+  .hero-bloc {
+    display: none;
+  }
+  .login-signup {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .login-signup button {
+    background-color: white;
+    color: #017782;
+    border: solid 2px #017782;
+    padding: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .deconnexion {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    border: 0px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .publish {
+    background-color: #017782;
+    color: white;
+    border: solid 2px #017782;
+    padding: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+@media (max-width: 400px) {
+  .header-section {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .price-filters {
+    justify-content: center;
+  }
+  .top input {
+    display: none;
+  }
 }

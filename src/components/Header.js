@@ -1,17 +1,7 @@
 import { Link } from "react-router-dom";
+import burgerIcone from "../assets/burger-icone.png";
 
-const Header = ({
-  token,
-  handleToken,
-  filters,
-  setFilters,
-  priceMin,
-  setPriceMin,
-  priceMax,
-  setPriceMax,
-  sort,
-  setSort,
-}) => {
+const Header = ({ token, handleToken, filters, setFilters, menu, setMenu }) => {
   // console.log(filters);
   return (
     <div className="header">
@@ -57,21 +47,15 @@ const Header = ({
               <button>Vends tes articles</button>
             </Link>
           </div>
+          <img
+            src={burgerIcone}
+            alt="menu"
+            className="button-menu"
+            onClick={() => {
+              setMenu(!menu);
+            }}
+          />
         </div>
-        {/* <div>
-          <nav className="nav">
-            <ul>
-              <li>Femmes</li>
-              <li>Hommes</li>
-              <li>Enfants</li>
-              <li>Maison</li>
-              <li>Divertissement</li>
-              <li>Animaux</li>
-              <li>A propos</li>
-              <li>Notre plateforme</li>
-            </ul>
-          </nav>
-        </div> */}
       </div>
     </div>
   );
