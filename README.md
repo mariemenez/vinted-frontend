@@ -10,7 +10,7 @@ This a replica of the website vinted 👗
 * yarn
 * yarn start
 
-### the user can 
+### The user can 
 
 * Signup/Login
 * See all clothes and filter them
