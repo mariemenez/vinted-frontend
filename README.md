@@ -26,4 +26,4 @@ This a replica of the website vinted 👗
 
 ### Live 
 
-https://vinted-marie-menez.netlify.app/
+➡ https://vinted-marie-menez.netlify.app/
