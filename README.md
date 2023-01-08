@@ -4,18 +4,18 @@
 
 This a replica of the website vinted 👗
 
-Entrez ici les instructions pour bien débuter avec votre projet...
+### To start
 
-### Pré-requis
+* yarn
+* yarn start
 
-Ce qu'il est requis pour commencer avec votre projet...
+### the user can 
 
-- Programme 1
-- Programme 2
-- etc...
+* Signup/Login
+* See all clothes and filter them
+* see the details of an article
+* buy them with stripe 
+* publish a new article
 
-### Installation
 
-Les étapes pour installer votre programme....
-
-Dites ce qu'il faut faire...
+![](https://media.giphy.com/media/eODorF2RmIHol2Wt3g/giphy.gif)
