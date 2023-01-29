@@ -70,8 +70,8 @@ const CheckoutForm = ({ token }) => {
               <div>
                 <p>
                   Il ne vous reste plus qu'une étape pour vous offrir {title}.
-                  <br /> Vous allez payer {priceTotal} €. Frais de protection et
-                  frais de port inclus.
+                  <br /> Vous allez payer {priceTotal.toFixed(2)} €. Frais de
+                  protection et frais de port inclus.
                 </p>
               </div>
             </div>

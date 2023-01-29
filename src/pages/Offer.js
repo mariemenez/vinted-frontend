@@ -36,7 +36,6 @@ const Offer = () => {
       <div className="offer">
         <section className="left">
           <img src={data.product_image.picture} alt="clothes" />
-          {/* {console.log(data)} */}
         </section>
         <section className="right">
           <div className="informations">

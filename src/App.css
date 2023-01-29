@@ -225,8 +225,8 @@ section {
   align-items: center;
 }
 .offer img {
-  width: 500px;
-  height: 600px;
+  width: 70%;
+  height: 90%;
   object-fit: cover;
   object-position: center;
 }
@@ -240,8 +240,8 @@ section {
 }
 
 .informations {
-  width: 500px;
-  height: 600px;
+  width: 70%;
+  height: 90%;
   padding: 20px;
   font-size: 15px;
   line-height: 30px;
@@ -288,7 +288,6 @@ section {
 .acheter {
   /* background-color: pink; */
   flex: 1;
-  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -505,8 +504,7 @@ form {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  width: 30%;
-  height: 60%;
+  width: 50%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -517,7 +515,7 @@ form {
 }
 
 .resume {
-  /* background-color: white; */
+  /* background-color: blue; */
   flex: 2;
   padding: 30px;
   border-bottom: solid black 1px;
@@ -551,7 +549,7 @@ form {
 }
 
 .stripe {
-  /* background-color: lightgray; */
+  background-color: white;
   flex: 1;
 }
 
@@ -656,6 +654,8 @@ form {
     flex-direction: column;
     gap: 50px;
     padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero-bloc {
@@ -693,6 +693,25 @@ form {
     width: 100%;
     border-radius: 5px;
   }
+  .offer {
+    /* background-color: aquamarine; */
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .offer img {
+    width: 80%;
+  }
+  .informations {
+    width: 80%;
+  }
+  .owner img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
 }
 @media (max-width: 400px) {
   .header-section {
@@ -706,5 +725,9 @@ form {
   }
   .top input {
     display: none;
+  }
+  .content {
+    width: 100%;
+    height: 95%;
   }
 }
