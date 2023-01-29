@@ -8,6 +8,7 @@ const Login = ({ handleToken, menu, setMenu, token }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,6 +25,9 @@ const Login = ({ handleToken, menu, setMenu, token }) => {
       handleToken(token);
       navigate("/");
     } catch (error) {
+      if (error.response.status === 400) {
+        setErrorMessage("Veuillez remplir tous les champs !");
+      }
       console.log(error);
     }
   };
@@ -56,6 +60,7 @@ const Login = ({ handleToken, menu, setMenu, token }) => {
             }}
           />
           <div className="inscription">
+            <p className="error-login">{errorMessage}</p>
             <input type="submit" value="Se connecter" />
           </div>
         </form>

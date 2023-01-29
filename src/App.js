@@ -65,7 +65,17 @@ function App() {
             />
           }
         />
-        <Route path="offer/:id" element={<Offer />} />
+        <Route
+          path="offer/:id"
+          element={
+            <Offer
+              handleToken={handleToken}
+              menu={menu}
+              setMenu={setMenu}
+              token={token}
+            />
+          }
+        />
         <Route
           path="signup"
           element={
@@ -99,7 +109,17 @@ function App() {
             />
           }
         />
-        <Route path="payment" element={<Payment token={token} />} />
+        <Route
+          path="payment"
+          element={
+            <Payment
+              token={token}
+              handleToken={handleToken}
+              menu={menu}
+              setMenu={setMenu}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </Router>

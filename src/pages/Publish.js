@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Menu from "../components/Menu";
 
 const Publish = ({ token, menu, setMenu, handleToken }) => {
@@ -13,6 +13,9 @@ const Publish = ({ token, menu, setMenu, handleToken }) => {
   const [condition, setCondition] = useState("");
   const [place, setPlace] = useState("");
   const [price, setPrice] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,12 +37,16 @@ const Publish = ({ token, menu, setMenu, handleToken }) => {
         {
           headers: {
             Authorization: "Bearer " + token,
-            // "Content-Type": "multipart/form-data",
+            "Content-Type": "multipart/form-data",
           },
         }
       );
       console.log(response.data);
+      navigate("/");
     } catch (error) {
+      if (error.response.status === 400) {
+        setErrorMessage("Merci de remplir tous les champs !");
+      }
       console.log(error);
     }
   };
@@ -163,6 +170,7 @@ const Publish = ({ token, menu, setMenu, handleToken }) => {
                       />
                     </div>
                   </div>
+                  <p className="error-publish">{errorMessage}</p>
                   <div className="ajouter">
                     <button type="submit">Ajouter</button>
                   </div>

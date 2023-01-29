@@ -350,6 +350,7 @@ form {
   color: white;
   font-size: 15px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .inscription {
   text-align: center;
@@ -364,6 +365,11 @@ form {
   font-size: 14px;
 }
 
+.error-login {
+  color: red;
+  text-align: center;
+  padding: 20px;
+}
 /* LOADING */
 
 .loading {
@@ -486,6 +492,11 @@ form {
   border-radius: 5px;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.error-publish {
+  color: red;
+  text-align: end;
 }
 
 /* PAIEMENT */
@@ -693,6 +704,7 @@ form {
     width: 100%;
     border-radius: 5px;
   }
+
   .offer {
     /* background-color: aquamarine; */
     height: 100%;
@@ -729,5 +741,16 @@ form {
   .content {
     width: 100%;
     height: 95%;
+  }
+  .form2 div {
+    /* background-color: aquamarine; */
+    flex-direction: column;
+  }
+  .form2 input {
+    width: 100%;
+  }
+  .error-publish {
+    color: red;
+    text-align: center;
   }
 }

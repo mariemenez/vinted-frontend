@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
+import Menu from "../components/Menu";
 
-const Offer = () => {
+const Offer = ({ menu, setMenu, token, handleToken }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -32,7 +33,13 @@ const Offer = () => {
       <Loading />
     </div>
   ) : (
-    <div className>
+    <div>
+      <Menu
+        menu={menu}
+        setMenu={setMenu}
+        token={token}
+        handleToken={handleToken}
+      />
       <div className="offer">
         <section className="left">
           <img src={data.product_image.picture} alt="clothes" />

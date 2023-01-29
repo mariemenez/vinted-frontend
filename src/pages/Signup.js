@@ -10,23 +10,27 @@ const Signup = ({ handleToken, menu, setMenu, token }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        "https://site--backend-vinted--6gc2xpkgkrgz.code.run/user/signup",
-        {
-          email: email,
-          username: username,
-          password: password,
-          newsletter: newsletter,
-        }
-      );
-      const token = response.data.token;
-      handleToken(token);
-      navigate("/");
-      //   console.log(token);
+      if (!username || !password || !email) {
+        setErrorMessage("Veuillez remplir tous les champs !");
+      } else {
+        const response = await axios.post(
+          "https://site--backend-vinted--6gc2xpkgkrgz.code.run/user/signup",
+          {
+            email: email,
+            username: username,
+            password: password,
+            newsletter: newsletter,
+          }
+        );
+        const token = response.data.token;
+        handleToken(token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -86,6 +90,7 @@ const Signup = ({ handleToken, menu, setMenu, token }) => {
             avoir plus de 18 ans.
           </p>
           <div className="inscription">
+            <p className="error-login">{errorMessage}</p>
             <input type="submit" value="S'inscrire" />
           </div>
         </form>
